@@ -109,7 +109,7 @@ const ReservationSection = () => {
             </div>
             <div>
               <div className="text-sm text-gray-600 mb-1">location</div>
-              <div className="font-semibold text-lg">New Street Town 2512x (U.S)</div>
+              <div className="font-semibold text-lg">Business Address (Canada)</div>
             </div>
           </motion.div>
         </div>
