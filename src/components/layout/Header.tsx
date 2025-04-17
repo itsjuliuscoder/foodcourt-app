@@ -66,6 +66,9 @@ const Header = () => {
             <option value="us">🇺🇸 USA</option>
             <option value="uk">🇬🇧 UK</option>
             <option value="ca">🇨🇦 Canada</option>
+            <option value="ng">🇳🇬 Nigeria</option>
+            <option value="ch">🇨🇭 Switzerland</option>
+            <option value="de">🇩🇪 Germany</option>
           </motion.select>
           <motion.button 
             className="btn-primary"

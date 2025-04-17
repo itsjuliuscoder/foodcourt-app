@@ -3,6 +3,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const locations = [
+  {
+    country: 'Canada',
+    address: 'Business Address (Canada)',
+    delay: 0.4
+  },
+];
+
 const ReservationSection = () => {
   const [formData, setFormData] = useState({
     guests: '',
@@ -67,7 +75,7 @@ const ReservationSection = () => {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
           <motion.div 
             className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-6 bg-white rounded-xl shadow-sm"
             initial={{ opacity: 0, x: -20 }}
@@ -97,21 +105,26 @@ const ReservationSection = () => {
               <div className="font-semibold text-lg break-all">chiommyconsumables_@gmail.com</div>
             </div>
           </motion.div>
+        </div>
 
-          <motion.div 
-            className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-6 bg-white rounded-xl shadow-sm"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <div className="w-16 h-16 bg-[--secondary] rounded-full flex items-center justify-center shrink-0">
-              <span className="text-3xl">📍</span>
-            </div>
-            <div>
-              <div className="text-sm text-gray-600 mb-1">location</div>
-              <div className="font-semibold text-lg">Business Address (Canada)</div>
-            </div>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 max-w-6xl mx-auto">
+          {locations.map((location, index) => (
+            <motion.div 
+              key={location.country}
+              className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-6 bg-white rounded-xl shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: location.delay }}
+            >
+              <div className="w-16 h-16 bg-[--secondary] rounded-full flex items-center justify-center shrink-0">
+                <span className="text-3xl">📍</span>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600 mb-1">location</div>
+                <div className="font-semibold text-lg">{location.address}</div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         <div className="max-w-3xl mx-auto">
