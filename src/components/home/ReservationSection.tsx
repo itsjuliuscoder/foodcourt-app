@@ -110,7 +110,7 @@ const ReservationSection = () => {
                   exit={{ opacity: 0 }}
                   className="absolute -top-12 left-0 right-0 bg-green-100 text-green-700 px-4 py-3 rounded-lg text-center"
                 >
-                  Reservation submitted successfully! We'll contact you shortly.
+                  Reservation submitted successfully! We&apos;ll contact you shortly.
                 </motion.div>
               )}
             </AnimatePresence>
