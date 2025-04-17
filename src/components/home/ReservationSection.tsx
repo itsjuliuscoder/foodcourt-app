@@ -46,61 +46,75 @@ const ReservationSection = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-[--primary] uppercase font-semibold mb-4">GET IN TOUCH</div>
-          <h2 className="text-4xl font-bold mb-12">
+      <div className="container max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <motion.div 
+            className="text-[--primary] uppercase font-semibold mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            GET IN TOUCH
+          </motion.div>
+          <motion.h2 
+            className="text-4xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Reservation Table & Enjoy<br />
             Dining Table
-          </h2>
+          </motion.h2>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <motion.div 
-              className="flex items-center gap-4"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="w-12 h-12 bg-[--secondary] rounded-full flex items-center justify-center">
-                <span className="text-2xl">📞</span>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">for booking</div>
-                <div className="font-semibold">+1 (850) 344 0 66</div>
-              </div>
-            </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+          <motion.div 
+            className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-6 bg-white rounded-xl shadow-sm"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="w-16 h-16 bg-[--secondary] rounded-full flex items-center justify-center shrink-0">
+              <span className="text-3xl">📞</span>
+            </div>
+            <div>
+              <div className="text-sm text-gray-600 mb-1">for booking</div>
+              <div className="font-semibold text-lg">+1 (850) 344 0 66</div>
+            </div>
+          </motion.div>
 
-            <motion.div 
-              className="flex items-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="w-12 h-12 bg-[--secondary] rounded-full flex items-center justify-center">
-                <span className="text-2xl">✉️</span>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">for home delivery</div>
-                <div className="font-semibold">chiommyconsumables_@gmail.com</div>
-              </div>
-            </motion.div>
+          <motion.div 
+            className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-6 bg-white rounded-xl shadow-sm"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="w-16 h-16 bg-[--secondary] rounded-full flex items-center justify-center shrink-0">
+              <span className="text-3xl">✉️</span>
+            </div>
+            <div>
+              <div className="text-sm text-gray-600 mb-1">for home delivery</div>
+              <div className="font-semibold text-lg break-all">chiommyconsumables_@gmail.com</div>
+            </div>
+          </motion.div>
 
-            <motion.div 
-              className="flex items-center gap-4"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <div className="w-12 h-12 bg-[--secondary] rounded-full flex items-center justify-center">
-                <span className="text-2xl">📍</span>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">location</div>
-                <div className="font-semibold">New Street Town 2512x (U.S)</div>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div 
+            className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-6 bg-white rounded-xl shadow-sm"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="w-16 h-16 bg-[--secondary] rounded-full flex items-center justify-center shrink-0">
+              <span className="text-3xl">📍</span>
+            </div>
+            <div>
+              <div className="text-sm text-gray-600 mb-1">location</div>
+              <div className="font-semibold text-lg">New Street Town 2512x (U.S)</div>
+            </div>
+          </motion.div>
+        </div>
 
+        <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6 relative">
             <AnimatePresence>
               {showSuccess && (
@@ -167,7 +181,7 @@ const ReservationSection = () => {
 
             <button 
               type="submit" 
-              className="btn-primary relative"
+              className="btn-primary relative w-full md:w-auto md:px-12"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
