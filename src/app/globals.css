@@ -2,26 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  :root {
+    --primary: #008751; /* Nigerian Green */
+    --secondary: #FDB913; /* Nigerian Yellow/Gold */
+    --background: #ffffff;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-4;
+  }
+  
+  .btn-primary {
+    @apply bg-[--primary] text-white px-6 py-2 rounded-full hover:opacity-90 transition-all;
+  }
+  
+  .btn-secondary {
+    @apply bg-[--secondary] text-black px-6 py-2 rounded-full hover:opacity-90 transition-all;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6;
+  }
+
+  .highlight-text {
+    @apply text-[--primary] font-semibold;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply text-gray-800;
 }
