@@ -196,6 +196,10 @@ const ReservationSection = () => {
               type="submit" 
               className="btn-primary relative w-full md:w-auto md:px-12"
               disabled={isSubmitting}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('https://wa.me/2348068845219', '_blank');
+              }}
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">

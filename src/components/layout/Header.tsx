@@ -74,6 +74,7 @@ const Header = () => {
             className="btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => window.open('https://wa.me/2348068845219', '_blank')}
           >
             Order Now
           </motion.button>

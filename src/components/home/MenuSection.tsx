@@ -93,7 +93,12 @@ const MenuSection = () => {
         </div>
 
         <div className="text-center mt-8">
-          <button className="btn-secondary">View All Products</button>
+          <button 
+            className="btn-secondary"
+            onClick={() => window.open('https://wa.me/2348068845219', '_blank')}
+          >
+            View All Products
+          </button>
         </div>
       </div>
     </section>
